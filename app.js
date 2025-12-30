@@ -83,7 +83,7 @@ app.get("/", (req, res) => {
     "Strict-Transport-Security",
     "max-age=31536000; includeSubDomains"
   );
-  res.render("index");
+  res.render("home");
 });
 
 // app.get("/adminpanel", (req, res) => {
@@ -102,7 +102,6 @@ app.get("/", (req, res) => {
 
 // single slug
 app.get("/:slug", (req, res, next) => {
-  console.log("inside the slug")
   res.setHeader(
     "Content-Security-Policy",
 "default-src 'self' data: https://cdnjs.cloudflare.com; script-src 'self' https://code.jquery.com; style-src  'self' 'unsafe-inline'  https://cdnjs.cloudflare.com; img-src 'self' data: ;"  );
