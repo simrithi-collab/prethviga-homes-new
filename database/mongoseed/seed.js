@@ -199,8 +199,9 @@ const seedMongoDB = async () => {
                 ]
             },
         ]
-        // await homeConnection.deleteMany({});
-        await homeConnection.insertMany(insertHomeData);
+        // await Connection.deleteMany({});
+        await discoverUsCollection.insertMany(insertdiscoverUsData);
+        await OnGoingPageCollection.insertMany(insertOnGoingPageData);
         console.log('Seeding completed successfully');
         process.exit(0);
     } catch (error) {
