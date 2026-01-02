@@ -81,10 +81,11 @@ include layout/header.pug
             )
               path(
                 d=amenity.svg.path
-                stroke="#C1834E"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                stroke=amenity.svg.stroke
+                stroke-width=amenity.svg.strokeWidth
+                stroke-linecap=amenity.svg.strokeLinecap
+                stroke-linejoin=amenity.svg.strokeLinejoin
+                fill=amenity.svg.fill || "none"
               )
           span #{amenity.feature}
     .floor-layout
@@ -97,37 +98,71 @@ include layout/header.pug
       p.location-description
         | Discover the exceptional amenities and features that make Sunset Ridge Residence stand out.
     .location-container
-      .location-image
-        img(src='../../assets/images/Rectangle.webp' alt='Sunset Ridge Residence Image')
-      .location-details
-        .detail-item
-          span.detail-icon
-            svg(width='18' height='22' viewbox='0 0 18 22' fill='none' xmlns='http://www.w3.org/2000/svg')
-              path(d='M17 9C17 13.993 11.461 19.193 9.601 20.799C9.42772 20.9293 9.2168 20.9998 9 20.9998C8.7832 20.9998 8.57228 20.9293 8.399 20.799C6.539 19.193 1 13.993 1 9C1 6.87827 1.84285 4.84344 3.34315 3.34315C4.84344 1.84285 6.87827 1 9 1C11.1217 1 13.1566 1.84285 14.6569 3.34315C16.1571 4.84344 17 6.87827 17 9Z' stroke='#C1834E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-              path(d='M9 12C10.6569 12 12 10.6569 12 9C12 7.34315 10.6569 6 9 6C7.34315 6 6 7.34315 6 9C6 10.6569 7.34315 12 9 12Z' stroke='#C1834E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-          .detail-description
-            span.description-title Address
-            span.description-info Avinashi Road, Coimbatore - 641018
-        .detail-item
-          span.detail-icon
-            svg(width='21' height='22' viewbox='0 0 21 22' fill='none' xmlns='http://www.w3.org/2000/svg')
-              path(d='M5 21V3C5 2.46957 5.21071 1.96086 5.58579 1.58579C5.96086 1.21071 6.46957 1 7 1H15C15.5304 1 16.0391 1.21071 16.4142 1.58579C16.7893 1.96086 17 2.46957 17 3V21M5 21H17M5 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V13C1 12.4696 1.21071 11.9609 1.58579 11.5858C1.96086 11.2107 2.46957 11 3 11H5M17 21H19C19.5304 21 20.0391 20.7893 20.4142 20.4142C20.7893 20.0391 21 19.5304 21 19V10C21 9.46957 20.7893 8.96086 20.4142 8.58579C20.0391 8.21071 19.5304 8 19 8H17M9 5H13M9 9H13M9 13H13M9 17H13' stroke='#C1834E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-          .detail-description
-            span.description-title Nearby Landmarks
-            ul.landmarks-list
-              li.landmark &bull; 2 km from City Center
-              li.landmark &bull; 5 min to Schools &amp; Hospitals
-              li.landmark &bull; 10 min to Shopping Malls
-              li.landmark &bull; Easy access to IT Parks
-        .detail-item
-          span.detail-icon
-            svg(width='18' height='13' viewbox='0 0 18 13' fill='none' xmlns='http://www.w3.org/2000/svg')
-              path(d='M17 1L6 12L1 7' stroke='#C1834E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
-          .detail-description
-            span.description-title Connectivity
-            span.description-info
-              | Well-connected by major roads and public transport with easy
-              | access to highways
+        .location-image
+          img(src=locationData.image, alt="Location Image")
+        .location-details
+          each item in locationData.details
+            .detail-item
+              span.detail-icon
+                svg(
+                  width=item.svg.width
+                  height=item.svg.height
+                  viewBox=item.svg.viewBox
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid meet"
+                )
+                  each p in item.svg.paths  
+                    path(
+                      d=p 
+                      stroke=item.svg.stroke
+                      stroke-width=item.svg.strokeWidth
+                      stroke-linecap=item.svg.strokeLinecap
+                      stroke-linejoin=item.svg.strokeLinejoin
+                      fill=item.svg.fill
+                    )
+              .details-description 
+                span.description-title 
+                  h3 #{item.title}
+                
+                if item.type === "address" || item.type === "connectivity"
+                  span.description-info #{item.text}
+
+                if item.type === "landmarks"
+                  ul.landmarks-list
+                    each point in item.area
+                      li.landmark #{point}
+    //- .location-container
+    //-   .location-image
+    //-     img(src='../../assets/images/Rectangle.webp' alt='Sunset Ridge Residence Image')
+    //-   .location-details
+    //-     .detail-item
+    //-       span.detail-icon
+    //-         svg(width='18' height='22' viewbox='0 0 18 22' fill='none' xmlns='http://www.w3.org/2000/svg')
+    //-           path(d='M17 9C17 13.993 11.461 19.193 9.601 20.799C9.42772 20.9293 9.2168 20.9998 9 20.9998C8.7832 20.9998 8.57228 20.9293 8.399 20.799C6.539 19.193 1 13.993 1 9C1 6.87827 1.84285 4.84344 3.34315 3.34315C4.84344 1.84285 6.87827 1 9 1C11.1217 1 13.1566 1.84285 14.6569 3.34315C16.1571 4.84344 17 6.87827 17 9Z' stroke='#C1834E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+    //-           path(d='M9 12C10.6569 12 12 10.6569 12 9C12 7.34315 10.6569 6 9 6C7.34315 6 6 7.34315 6 9C6 10.6569 7.34315 12 9 12Z' stroke='#C1834E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+    //-       .detail-description
+    //-         span.description-title Address
+    //-         span.description-info Avinashi Road, Coimbatore - 641018
+    //-     .detail-item
+    //-       span.detail-icon
+    //-         svg(width='21' height='22' viewbox='0 0 21 22' fill='none' xmlns='http://www.w3.org/2000/svg')
+    //-           path(d='M5 21V3C5 2.46957 5.21071 1.96086 5.58579 1.58579C5.96086 1.21071 6.46957 1 7 1H15C15.5304 1 16.0391 1.21071 16.4142 1.58579C16.7893 1.96086 17 2.46957 17 3V21M5 21H17M5 21H3C2.46957 21 1.96086 20.7893 1.58579 20.4142C1.21071 20.0391 1 19.5304 1 19V13C1 12.4696 1.21071 11.9609 1.58579 11.5858C1.96086 11.2107 2.46957 11 3 11H5M17 21H19C19.5304 21 20.0391 20.7893 20.4142 20.4142C20.7893 20.0391 21 19.5304 21 19V10C21 9.46957 20.7893 8.96086 20.4142 8.58579C20.0391 8.21071 19.5304 8 19 8H17M9 5H13M9 9H13M9 13H13M9 17H13' stroke='#C1834E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+    //-       .detail-description
+    //-         span.description-title Nearby Landmarks
+    //-         ul.landmarks-list
+    //-           li.landmark &bull; 2 km from City Center
+    //-           li.landmark &bull; 5 min to Schools &amp; Hospitals
+    //-           li.landmark &bull; 10 min to Shopping Malls
+    //-           li.landmark &bull; Easy access to IT Parks
+    //-     .detail-item
+    //-       span.detail-icon
+    //-         svg(width='18' height='13' viewbox='0 0 18 13' fill='none' xmlns='http://www.w3.org/2000/svg')
+    //-           path(d='M17 1L6 12L1 7' stroke='#C1834E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round')
+    //-       .detail-description
+    //-         span.description-title Connectivity
+    //-         span.description-info
+    //-           | Well-connected by major roads and public transport with easy
+    //-           | access to highways
   .project-gallery
     .gallery-header
       h1.gallery-title Project Gallery

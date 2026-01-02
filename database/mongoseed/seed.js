@@ -202,7 +202,7 @@ const seedMongoDB = async () => {
                         "card-image":`${process.env.PROJECT_URL}/assets/images/card3.webp`,
                         "project-name":"Pinnacle View Condominiums",
                         "project-location":"East Side",
-                        "project-date":"November 2024",
+                        "project-date":"November 2024 2024",
                         "card-footer-text":"24 Premium Apartments",
                     },
                     {
