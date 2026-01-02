@@ -521,8 +521,8 @@ const seedMongoDB = async () => {
         // Clear existing data to prevent duplicates
         await homeConnection.deleteMany({});
         await ProjectPageConnection.deleteMany({});
-        await OnGoingPageCollection.deleteMany({});
-        await discoverUsCollection.deleteMany({});
+        await OnGoingPageConnection.deleteMany({});
+        await discoverUsConnection.deleteMany({});
         
         // Insert fresh data
         await homeConnection.insertMany(insertHomeData);
