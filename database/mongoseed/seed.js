@@ -16,18 +16,12 @@ const seedMongoDB = async () => {
                     {
                         "projimage1":`${process.env.PROJECT_URL}/assets/images/homeani1.webp`,
                         "projimage2":`${process.env.PROJECT_URL}/assets/images/homeani2.webp`,
-<<<<<<< HEAD
-                    },
-                    {
-                        "banner_text":`Exceptional service from start to finish! Prethviga Homes
-=======
                         "projimage3":`${process.env.PROJECT_URL}/assets/images/homeani3.webp`,
                         "projimage4":`${process.env.PROJECT_URL}/assets/images/homeani4.webp`
 
                     },
                     {
                         "reviewer":`Exceptional service from start to finish! Prethviga Homes
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
                         | turned our outdated kitchen into a modern masterpiece. Their
                         | team was professional, efficient, and a pleasure to work
                         | with.`,
@@ -35,18 +29,12 @@ const seedMongoDB = async () => {
                         "user_role":"Manager, IT Field"
                     },
                     {
-<<<<<<< HEAD
-                        "banner_text":`Outstanding work! 
-=======
                         "reviewer":`Outstanding work! 
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
                         |They completed our commercial building ahead of schedule and 
                         |the quality exceeded our expectations. Highly professional team.`,
                         "user_name":"John Davidson",
                         "user_role":"CEO, Davidson Enterprises"
                     },
-<<<<<<< HEAD
-=======
                     {
                         "reviewer":`Excellent work! 
                         |They completed our commercial building ahead of schedule and 
@@ -54,7 +42,6 @@ const seedMongoDB = async () => {
                         "user_name":"John Davidson",
                         "user_role":"CEO, Davidson Enterprises"
                     }
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
                 ]
             },
             {
@@ -215,33 +202,21 @@ const seedMongoDB = async () => {
                         "card-image":`${process.env.PROJECT_URL}/assets/images/card3.webp`,
                         "project-name":"Pinnacle View Condominiums",
                         "project-location":"East Side",
-<<<<<<< HEAD
-                        "project-date":"November 2024 2024",
-=======
                         "project-date":"November 2024",
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
                         "card-footer-text":"24 Premium Apartments",
                     },
                     {
                         "card-image":`${process.env.PROJECT_URL}/assets/images/card3.webp`,
                         "project-name":"Pinnacle View Condominiums",
                         "project-location":"East Side",
-<<<<<<< HEAD
-                        "project-date":"November 2024 2024",
-=======
                         "project-date":"November 2024",
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
                         "card-footer-text":"24 Premium Apartments",
                     },
                     {
                         "card-image":`${process.env.PROJECT_URL}/assets/images/card2.webp`,
                         "project-name":"Pinnacle View Condominiums",
                         "project-location":"East Side",
-<<<<<<< HEAD
-                        "project-date":"November 2024 2024",
-=======
                         "project-date":"November 2024",
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
                         "card-footer-text":"24 Premium Apartments",
                     }
                 ]
@@ -251,20 +226,6 @@ const seedMongoDB = async () => {
         const OnGoingPageConnection = mongoose.connection.db.collection("OnGoingPage");
         const insertOnGoingPageData = [
             {
-<<<<<<< HEAD
-                "page_slug":"OnGoingPage",
-                "page_section":"features-grid",
-                "page_content":[
-                    {
-                        "fc_heading1": "Premium Quality",
-                        "fc_description1": "High-quality materials and superior craftsmanship ensuring lasting value",
-                        "fc_heading2": "Community Living",
-                        "fc_description2": "High-quality materials and superior craftsmanship ensuring lasting value",
-                        "fc_heading3": "Spacious Design",
-                        "fc_description3": "High-quality materials and superior craftsmanship ensuring lasting value",
-                        "fc_heading4": "Modern Architecture",
-                        "fc_description4": "High-quality materials and superior craftsmanship ensuring lasting value"
-=======
                 page_slug: "OnGoingPage",
                 page_section: "features-grid",
                 page_content: [
@@ -307,23 +268,11 @@ const seedMongoDB = async () => {
                                 viewBox: "0 0 30 30",
                                 path: "M6.66634 28V4.00001C6.66634 3.29277 6.94729 2.61449 7.44739 2.11439C7.94749 1.61429 8.62576 1.33334 9.33301 1.33334H19.9997C20.7069 1.33334 21.3852 1.61429 21.8853 2.11439C22.3854 2.61449 22.6663 3.29277 22.6663 4.00001V28M6.66634 28H22.6663M6.66634 28L3.99967 28C3.29243 28 2.61415 27.7191 2.11406 27.219C1.61396 26.7189 1.33301 26.0406 1.33301 25.3333V17.3333C1.33301 16.6261 1.61396 15.9478 2.11406 15.4477C2.61415 14.9476 3.29243 14.6667 3.99967 14.6667H6.66634M22.6663 28L25.333 28C26.0403 28 26.7185 27.7191 27.2186 27.219C27.7187 26.7189 27.9997 26.0406 27.9997 25.3333V13.3333C27.9997 12.6261 27.7187 11.9478 27.2186 11.4477C26.7185 10.9476 26.0403 10.6667 25.333 10.6667H22.6663M11.9997 6.66668H17.333M11.9997 12H17.333M11.9997 17.3333H17.333M11.9997 22.6667H17.333"
                         }
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
                     }
                 ]
             },
             {
                 "page_slug":"OnGoingPage",
-<<<<<<< HEAD
-                "page_section":"project-planning-container",
-                "page_content":[
-                    {
-                        "feature": "Swimming Pool",
-                        "feature1": "Theater",
-                        "feature2": "Fitness Center",
-                        "feature3": "Parking",
-                        "feature4": "Playground",
-                        "feature5": "24/7 Security",
-=======
                 "page_section":"amenities-list",
                 "page_content":[
                     {
@@ -379,7 +328,6 @@ const seedMongoDB = async () => {
                                 path: "M7 19V13C7 12.4696 7.21071 11.9609 7.58579 11.5858C7.96086 11.2107 8.46957 11 9 11H10.341M17.682 8.682L10 1L1 10H3V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19H10M20 14C20 18 17.5 20 16.5 20C15.5 20 13 18 13 14C14 14 15.5 13.5 16.5 12.5C17.5 13.5 19 14 20 14Z"
                         },
                         "feature": "24/7 Security"
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
                     }
                 ]
             },
@@ -391,19 +339,6 @@ const seedMongoDB = async () => {
                         "location-image": `${process.env.PROJECT_URL}assets/images/Rectangle.webp`
                     },
                     {
-<<<<<<< HEAD
-                        "address": "Address",
-                        "add_text": "Avinashi Road, Coimbatore - 641018",
-                    },
-                    {
-                        "landmarks": "Nearby Landmarks",
-                        "list1": "2 km from City Center",
-                        "list2": "5 min to Schools &amp; Hospitals",
-                        "list3": "10 min to Shopping Malls",
-                        "list4": "Easy access to IT Parks"
-                    },
-                    {
-=======
                         svg: {
                                 width: 21,
                                 height: 21,
@@ -442,7 +377,6 @@ const seedMongoDB = async () => {
                                 viewBox: "0 0 21 21",
                                 path: "M17 1L6 12L1 7"
                         },
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
                         "connect": "Connectivity",
                         "c_text": "Well-connected by major roads and public transport with easy access to highways"
                     }
@@ -453,35 +387,20 @@ const seedMongoDB = async () => {
                 "page_section":"faq-section-header",
                 "page_content":[
                     {
-<<<<<<< HEAD
-                        "question1": "How long does a typical construction project take?",
-                        "answer1": `The duration varies based on project complexity and scale. Residential projects
-=======
                         "question": "How long does a typical construction project take?",
                         "answer": `The duration varies based on project complexity and scale. Residential projects
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
                         | typically take 8-14 months, while commercial developments may require 12-24 months. We
                         | provide detailed timelines during project planning.`,
                     },
                     {
-<<<<<<< HEAD
-                        "question2": "What types of projects do you specialize in?",
-                        "answer2": `We specialize in residential condominiums, luxury estates, commercial buildings, and
-=======
                         "question": "What types of projects do you specialize in?",
                         "answer": `We specialize in residential condominiums, luxury estates, commercial buildings, and
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
                         | mixed-use developments. Our portfolio includes projects ranging from boutique apartments
                         | to large-scale residential complexes.`,
                     },
                     {
-<<<<<<< HEAD
-                        "question3": "Do you offer warranties on completed projects?",
-                        "answer3": `Yes, all our projects come with comprehensive warranties covering structural integrity,
-=======
                         "question": "Do you offer warranties on completed projects?",
                         "answer": `Yes, all our projects come with comprehensive warranties covering structural integrity,
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
                         | workmanship, and materials. We offer 10-year structural warranties and 2-year warranties
                         | on finishes and fittings.`,
                     }
@@ -599,9 +518,6 @@ const seedMongoDB = async () => {
                 ]
             }
         ]
-<<<<<<< HEAD
-        // await Connection.deleteMany({});
-=======
         // Clear existing data to prevent duplicates
         await homeConnection.deleteMany({});
         await ProjectPageConnection.deleteMany({});
@@ -609,7 +525,6 @@ const seedMongoDB = async () => {
         await discoverUsConnection.deleteMany({});
         
         // Insert fresh data
->>>>>>> 83854fc1fd2cbd9c13aa0862c1c6fc205b5ffd4e
         await homeConnection.insertMany(insertHomeData);
         await ProjectPageConnection.insertMany(insertProjectPageData);
         await OnGoingPageConnection.insertMany(insertOnGoingPageData);
