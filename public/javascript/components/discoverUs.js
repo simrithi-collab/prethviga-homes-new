@@ -26,19 +26,19 @@ const mobileContainer = document.querySelector(".mobile-container");
 const mobileOverlay = document.querySelector(".mobile-overlay");
 const closeBtn = document.querySelector(".menuclose");
 
-menuBtn.addEventListener("click", () => {
+menuBtn && menuBtn.addEventListener("click", () => {
   mobileContainer.classList.add("active");
   mobileOverlay.classList.add("active");
   document.body.style.overflow = "hidden";
 });
 
-closeBtn.addEventListener("click", () => {
+closeBtn && closeBtn.addEventListener("click", () => {
   mobileContainer.classList.remove("active");
   mobileOverlay.classList.remove("active");
   document.body.style.overflow = "auto";
 });
 
-mobileOverlay.addEventListener("click", () => {
+mobileOverlay && mobileOverlay.addEventListener("click", () => {
   mobileContainer.classList.remove("active");
   mobileOverlay.classList.remove("active");
 });
@@ -48,13 +48,14 @@ mobileOverlay.addEventListener("click", () => {
 const images = document.querySelectorAll(".rotator-img");
 let index = 0;
 function imageslide() {
+  console.log("imageslide", images);
   images.forEach((img) => img.classList.remove("active"));
   images[index].classList.add("active");
   index = (index + 1) % images.length;
 }
 
-imageslide();
-setInterval(imageslide, 2500);
+// imageslide();
+// setInterval(imageslide, 2500);
 
 // project:  project-container
 
