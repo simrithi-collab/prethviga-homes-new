@@ -1,23 +1,3 @@
-// require('dotenv').config();
-// const knex = require('knex');
-
-// const db = knex({
-//   client: process.env.DB_CONNECTION,
-//   connection: {
-//     host: process.env.DB_HOST,
-//     user: process.env.DB_USERNAME,
-//     password: process.env.DB_PASSWORD,
-//     database: process.env.DB_DATABASE,
-//     charset: 'utf8',
-//     timezone: 'UTC'
-//   }
-// });
-
-// module.exports = {
-//   knex: db,
-// };
-
-
 require("dotenv").config();
 module.exports = {
   development: {
@@ -31,6 +11,7 @@ module.exports = {
     timezone: '+05:30',
     seederStorage: 'sequelize',
     seederStorageTableName: 'CustomSeederTable',
+    image: process.env.PROJECT_URL,
   },
   mongodb: {
     uri: process.env.MONGODB_URI || 'mongodb://localhost:27017/prethviga-homes'

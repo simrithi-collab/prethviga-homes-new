@@ -11,6 +11,10 @@ const helmet = require("helmet");
 const mongoose = require("mongoose");
 const config = require("./config/config");
 const homeRoutes = require("./routes/homeRoutes");
+const onGoingPageRoutes = require("./routes/onGoingPageRoutes");
+const discoverUsRoutes = require("./routes/discoverUsRoutes");
+const contactRoutes = require('./routes/contactRoutes');
+
 
 (utils = require("./utils/index")), (env = process.env.NODE_ENV);
 
@@ -42,6 +46,8 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.locals.PROJECT_URL = process.env.PROJECT_URL;
+
 
 
 // View engine
@@ -67,6 +73,9 @@ app.use((req, res, next) => {
 // app.use("/assetsForSale", assetsForSaleRoutes);
 // app.use("/file", fileRoutes);
 app.use("/", homeRoutes);
+app.use("/OnGoingPage", onGoingPageRoutes);
+app.use("/discoverUs", discoverUsRoutes);
+app.use('/', contactRoutes);
 
 app.use((req, res, next) => {
   res.setHeader(

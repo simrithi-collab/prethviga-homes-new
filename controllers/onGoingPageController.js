@@ -4,24 +4,25 @@ const getonGoingPageData = async (req, res) => {
   try {
     console.log('OnGoingPage controller called');
     const onGoingPageData = await mongoose.connection.db.collection('OnGoingPage').find({ page_slug: 'OnGoingPage' }).toArray();
-        
-    const featureData = onGoingPageData.find(item => item.page_section === 'features-grid')?.page_content || [];    
-    const amenitiesData = onGoingPageData.find(item => item.page_section === 'amenities-list')?.page_content || [];
-    const locationData = onGoingPageData.find(item => item.page_section === 'location-section')?.page_content || [];
-    const frequencyData = onGoingPageData.find(item => item.page_section === 'faq-section-header')?.page_content || [];
-    
+    const featureData = onGoingPageData.find(item => item.page_section === 'features-grid')?.page_content || [];
+    const amenityData = onGoingPageData.find(item => item.page_section === 'amenities-list')?.page_content || [];
+    const locationData = onGoingPageData.find(item => item.page_section === 'location-container')?.page_content || [];
+    const galleryData = onGoingPageData.find(item => item.page_section === 'gallery-wrapper')?.page_content || [];
+    const frequencyData = onGoingPageData.find(item => item.page_section === 'faq-items-container')?.page_content || [];    
     res.render('OnGoingPage', {
       featureData,
-      amenitiesData,
+      amenityData,
       locationData,
+      galleryData,
       frequencyData
     });
   } catch (error) {
-    console.error('Error fetching home data:', error);
+    console.error('Error fetching OnGoingPage data:', error);
     res.render('OnGoingPage', {
       featureData: [],
-      amenitiesData: [],
+      amenityData: [],
       locationData: [],
+      galleryData: [],
       frequencyData: []
     });
   }
